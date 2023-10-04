@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+<body>
+	<%- include('../partials/header') %>
+		<main class="container">
+			<section class="registro">
+				<h2>Registro de usuario</h2>
+				<hr>
+				<form method="POST" action="/users/signup" enctype="multipart/form-data">
+					<input class="controlar" name="email" id="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>">
+					<% if (locals.errors && errors.email) { %>
+						<div><%= errors.email.msg %></div>
+					<% } %>
+					<input class="controlar" name="password" id="password" placeholder="Contraseña">
+					<% if (locals.errors && errors.password) { %>
+						<div><%= errors.password.msg %></div>
+					<% } %>
+					<div>Informacion Personal</div>
+					<input class="controlar" name="firstName" id="firstName" placeholder="Nombre"  value="<%= locals.oldData ? oldData.firstName : null %>">
+					<% if (locals.errors && errors.firstName) { %>
+						<div><%= errors.firstName.msg %></div>
+					<% } %>
+					<input class="controlar" name="lastName" id="lastName" placeholder="Apellido"  value="<%= locals.oldData ? oldData.lastName : null %>">
+					<% if (locals.errors && errors.lastName) { %>
+						<div><%= errors.lastName.msg %></div>
+					<% } %>
+					<input class="controlar" name="dni" id="dni" placeholder="Numero de DNI"  value="<%= locals.oldData ? oldData.dni : null %>">
+					<% if (locals.errors && errors.dni) { %>
+						<div><%= errors.dni.msg %></div>
+					<% } %>
+					<input class="controlar" name="phone" id="phone" placeholder="Numero de telefono"  value="<%= locals.oldData ? oldData.phone : null %>">
+					<% if (locals.errors && errors.phone) { %>
+						<div><%= errors.phone.msg %></div>
+					<% } %>
+					<select class="controlar" name="category" id="category" >
+						<option value="">Elegí una categoría:</option>
+						<% const categories = ['Vendedor','Comprador','Empresa'] %>
+						<% for(const oneCategory of categories) { %>
+							<option value="<%= oneCategory %>" <%= locals.oldData && (oneCategory === oldData.category) ? 'selected' : null %>> <%= oneCategory %> </option>
+						<% } %>
+					</select>
+					<% if (locals.errors && errors.category) { %>
+						<div><%= errors.category.msg %></div>
+					<% } %>
+					<input class="controlar" type="file" name="image" id="image">
+					<% if (locals.errors && errors.image) { %>
+						<div><%= errors.image.msg %></div>
+					<% } %>
+					<button class="boton" type="submit">Enviar</button>
+				</form>
+			</section>
+			<div class="mensaje">
+				<h4>Recordá:</h4>
+				<hr>
+				Es muy importante que coloques todos tus datos reales a la hora de registrar tu cuenta.
+				Ante cualquier inconveniente vamos a estar comunicándonos con vos por teléfono o vía email.
+			</div>
+		</main>
+		<%- include('../partials/footer') %>
+</body>
+
+</html>

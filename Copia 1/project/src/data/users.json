@@ -1,0 +1,13 @@
+[
+ {
+  "id": 1,
+  "firstName": "River",
+  "lastName": "Plate",
+  "email": "riverplate@gmail.com",
+  "password": "$2b$10$sHU2Nxo.IJKbjQovhEf8CeOr0KFsEHq8LAEv6SPDrdqQ3CbkRYlMS",
+  "dni": "44645057",
+  "phone": "+543883109976",
+  "category": "Vendedor",
+  "image": "image-1696368536905-433981918.jpg"
+ }
+]

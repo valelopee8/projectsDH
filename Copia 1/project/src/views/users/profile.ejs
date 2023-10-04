@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+    <main class="container">
+        <h1>HOLA <%= user.firstName+' '+user.lastName %></h1>
+        <h2><%= user.email %></h2>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

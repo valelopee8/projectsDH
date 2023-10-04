@@ -1,0 +1,36 @@
+<header class="container">
+	<div class="header">
+		<a href="/">
+			<div class="header__logo"><img src="/img/logo_final.jpg" alt=""></div>
+		</a>
+		<div class="header__search-area">
+			<form action="">
+				<input class="search-area__search" type="text" name="search" id="search">
+				<button class="search-area__button" type="submit">
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</button>
+			</form>
+		</div>
+		<div class="header__menu-button">
+			<i class="fa-solid fa-bars"></i>
+		</div>
+	</div>
+	<div class="header__menu" data-visible="false">
+		<ul>
+			<li><a class="button" href="/products">Productos</a></li>
+			<li><a class="button" href="#">Arma tu PC</a></li>
+		</ul>
+		<% if (session) { %>
+			<ul>
+				<li class="li-button"><a class="button" href="/productCart">Mi Carrito</a></li>
+				<li><a class="user-profile" href="/users/logout"><%= `${session.fName} ${session.lName}` %> <i class="fa-solid fa-circle-user"></i></a></li>
+			</ul>
+		<% } else { %>
+			<ul>
+				<li class="li-button"><a class="button" href="/users/login">Ingresar</a></li>
+				<li class="li-button"><a class="button" href="/users/signup">Registrarse</a></li>
+			</ul>
+		<% } %>
+	</div>
+	<div class="header__rgb-bar"></div>
+</header>
